@@ -1,0 +1,186 @@
+
+@import "tailwindcss";
+
+/* ShopHub Design Tokens */
+
+
+@theme {
+  --color-shop-primary: #2457d6;
+  --color-shop-primary-hover: #1c44ac;
+  --color-shop-primary-active: #183b95;
+
+  --color-shop-text: #15243b;
+  --color-shop-muted: #58677d;
+
+  --color-shop-background: #f2f5fa;
+  --color-shop-surface: #ffffff;
+
+  --color-shop-border: #dde4ee;
+
+  --color-shop-success: #16734a;
+
+  --color-shop-image: #eef2f8;
+
+  --font-sans: system-ui, sans-serif;
+}
+
+
+
+/* Base Styles */
+
+   
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+
+  background: var(--color-shop-background);
+  color: var(--color-shop-text);
+
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* 
+   Global Elements */
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: var(--color-shop-primary);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* 
+   Accessibility
+ */
+
+:focus-visible {
+  outline: 3px solid var(--color-shop-primary);
+  outline-offset: 3px;
+}
+
+
+/* 
+   ShopHub Main Layout
+ */
+
+.shop-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.shop-shell main {
+  flex: 1;
+}
+
+.shop-container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+.shop-section {
+  padding-block: 32px;
+}
+
+
+/* 
+   Shared Card
+ */
+
+.shop-card {
+  background: var(--color-shop-surface);
+  border: 1px solid var(--color-shop-border);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+
+/* 
+   Product Card
+ */
+
+.product-card {
+  background: var(--color-shop-surface);
+  border: 1px solid var(--color-shop-border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+
+/* 
+   Product Image
+ */
+
+.product-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+
+  object-fit: contain;
+
+  background: var(--color-shop-image);
+
+  padding: 16px;
+}
+
+
+/* 
+   Common Controls
+ */
+
+.shop-control {
+  min-height: 44px;
+}
+
+
+/* 
+   Responsive Layout
+ */
+
+@media (min-width: 992px) {
+  .shop-container {
+    padding-inline: 24px;
+  }
+
+  .shop-section {
+    padding-block: 48px;
+  }
+}
+
+
+/* 
+   Mobile Typography
+ */
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 26px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+}
